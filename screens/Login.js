@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
   elevation: 3,
  },
  textSmallButton: {
-  color: colors.cinzaEscuro,
+  color: colors.cinza,
   fontSize: 12,
   fontWeight: "700",
   alignSelf: "center",
