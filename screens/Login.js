@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
   paddingVertical: 10,
   paddingHorizontal: 50,
   fontSize: 12,
-  color: colors.cinza,
+  color: colors.cinzaEscuro,
  },
  buttonStrava: {
   marginVertical: 10,
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
   alignSelf: "center",
   fontWeight: "bold",
   fontSize: 20,
-  color: colors.textButtons,
+  color: "#FFF",
  },
  smallButton: {
   justifyContent: "center",
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
   elevation: 3,
  },
  textSmallButton: {
-  color: colors.cinza,
+  color: colors.cinzaEscuro,
   fontSize: 12,
   fontWeight: "700",
   alignSelf: "center",
