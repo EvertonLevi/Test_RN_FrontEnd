@@ -15,9 +15,9 @@ const MessageBadge = withBadge(1)(Icon)
 const { width } = Dimensions.get("window")
 
 export default function Feed() {
-  const [] = useState(false)
-  const [] = useState(false)
-  const [] = useState(true)
+  const [seguindo, setSeguindo] = useState()
+  const [clubes, setClubes] = useState()
+  const [marcas, setMarcas] = useState()
   const [data, setData] = useState([])
 
   useEffect(() => {
@@ -64,21 +64,21 @@ export default function Feed() {
         <View style={styles.buttonGroup}>
           <TouchableOpacity
             style={styles.segmentButton}
-            onPress={() => Alert.alert("Seguindo")}
+            onPress={() => setSeguindo(true) && setClubes(false) && setMarcas(false)}
           >
-            <Text style={styles.textSegmentButton}>Seguindo</Text>
+            <Text style={seguindo ? styles.textSegmentButton : styles.textSegmentButtonFalse}>Seguindo</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.segmentButton}
-            onPress={() => Alert.alert("Clubes")}
+            onPress={() => setSeguindo(false) && setClubes(true) && setMarcas(false)}
           >
-            <Text style={styles.textSegmentButton}>Clubes</Text>
+            <Text style={clubes ? styles.textSegmentButton : styles.textSegmentButtonFalse}>Clubes</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.segmentButton}
-            onPress={() => Alert.alert("Marcas")}
+            onPress={() => setSeguindo(false) && setClubes(false) && setMarcas(true)}
           >
-            <Text style={styles.textSegmentButton}>Marcas</Text>
+            <Text style={marcas ? styles.textSegmentButton : styles.textSegmentButtonFalse}>Marcas</Text>
           </TouchableOpacity>
         </View>
 
@@ -186,6 +186,13 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     borderBottomWidth: 2,
     borderBottomColor: colors.roxo
+  },
+  textSegmentButtonFalse: {
+    fontSize: 14,
+    color: colors.roxo,
+    fontWeight: "bold",
+    // borderBottomWidth: 2,
+    // borderBottomColor: colors.roxo
   },
   buttonNewPost: {
     flexDirection: "row",
